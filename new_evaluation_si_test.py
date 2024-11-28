@@ -747,7 +747,7 @@ def plot_pad(ChannelmapPath,imp,RecordingSystem,FPC,pad_path):
     ChannelMapDf = pd.read_excel(ChannelmapPath)
     ## 记录系统通道编号按照焊盘顺序排序
     RF= RecordingSystem+'（'+FPC.split('-')[0]+'）'
-    ch_map = ChannelMapDf.sort_values(by="焊盘")[RF].to_numpy()-1
+    ch_map = ChannelMapDf.sort_values(by="焊盘")[RF].to_numpy()
     pad_imp = np.array(imp)[ch_map].reshape((8,16)).T
     # hp = ChannelMapDf.sort_values(by="焊盘")["焊盘"].to_numpy().reshape((8,16)).T
     # print(hp)
